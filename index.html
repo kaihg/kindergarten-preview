@@ -70,7 +70,6 @@ header.nav .wrap { height:100%; display:flex; align-items:center; justify-conten
 .links { display:flex; gap:32px; margin-left:auto; margin-right:8px; }
 .links a { text-decoration:none; font-size:16px; background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat; transition:background-size .3s; padding-bottom:2px; }
 .links a:hover { background-size:100% 1px; }
-header .btn { min-height:44px; padding:0 20px; font-size:16px; }
 
 /* hero */
 .hero-photo { height:480px; overflow:hidden; }
@@ -110,7 +109,6 @@ a.ph:hover img { transform:scale(1.03); }
 .panel dl > div:first-child { border-top:0; padding-top:0; }
 .panel dt { font:500 14px/1.4 var(--font); letter-spacing:.06em; color:var(--muted); }
 .panel dd { font-size:19px; }
-.panel .btns { margin-top:28px; }
 .map { aspect-ratio:4/3; background:var(--alt); overflow:hidden; }
 .map iframe { width:100%; height:100%; border:0; display:block; }
 #visit { padding-top:0; }
@@ -126,7 +124,7 @@ a.ph:hover img { transform:scale(1.03); }
 .close p { margin-bottom:28px; color:var(--muted); font-size:clamp(18px,1.8vw,22px); }
 
 /* footer */
-footer { background:var(--ink); color:var(--bg); padding-block:clamp(56px,7vw,88px) 32px; }
+footer { background:var(--ink); color:var(--bg); padding-block:clamp(56px,7vw,88px) 112px; }
 footer a { text-decoration:none; }
 footer .cols { padding-bottom:48px; }
 footer .label { color:color-mix(in srgb,var(--bg) 65%,transparent); display:block; margin-bottom:10px; }
@@ -139,7 +137,8 @@ footer li a:hover { background-size:100% 1px; }
 .legal a { text-decoration:underline; }
 
 /* phone action bar */
-.actionbar { display:none; }
+.actionbar { position:fixed; right:24px; bottom:24px; z-index:30; }
+.actionbar .btn { min-height:56px; padding:0 32px; font-size:19px; }
 
 /* tablet */
 @media (max-width:1023px) {
@@ -158,15 +157,10 @@ footer li a:hover { background-size:100% 1px; }
   .s4,.s3 { grid-column:1/-1; }
   .hero-photo { height:78vw; }
   .head { flex-direction:column; align-items:flex-start; gap:8px; }
-  .btns .btn { width:100%; }
-  header .btn { display:none; }
-  .band .btn, .close .btn, .hero-text .btn { width:100%; }
   footer .s3 { grid-column:1/-1; }
-  .actionbar { display:block; position:fixed; left:0; right:0; bottom:0; z-index:30; padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom)); background:var(--bg); transform:translateY(110%); transition:transform .3s; }
-  .actionbar.on { transform:none; }
+  .actionbar { left:0; right:0; bottom:0; padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom)); background:var(--bg); }
   .actionbar .btn { width:100%; }
 }
-@media (min-width:640px) and (max-width:1023px) { header .btn { display:inline-flex; } }
 @media (prefers-reduced-motion:reduce) { .enter { animation:none; } .btn,.ph img,.more,.more::after { transition:none; } }
 </style>
 </head>
@@ -184,7 +178,6 @@ footer li a:hover { background-size:100% 1px; }
       <a href="#visit">來園參觀</a>
       <a href="#faq">常見問題</a>
     </nav>
-    <a class="btn" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a>
   </div>
 </header>
 
@@ -203,7 +196,6 @@ footer li a:hover { background-size:100% 1px; }
         </div>
         <div class="s5 enter d2">
           <p class="lead">讓孩子在安心的環境裡，按自己的步調學習。<span class="mock">MOCK</span></p>
-          <div class="btns"><a class="btn" id="hero-line" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a></div>
         </div>
       </div>
     </div>
@@ -242,7 +234,7 @@ footer li a:hover { background-size:100% 1px; }
       <h2>看園所日常</h2>
       <div class="side">
         <p>孩子們每天的活動影片，都放在我們的 Facebook 粉專。</p>
-        <a class="btn btn--inv" href="https://www.facebook.com/p/%E5%B0%8F%E8%9D%B8%E7%89%9B%E5%B9%BC%E5%85%92%E5%9C%92%E6%89%98%E5%AC%B0%E4%B8%AD%E5%BF%83-61551929941103/">到 Facebook 看園所日常</a>
+        <a class="more" href="https://www.facebook.com/p/%E5%B0%8F%E8%9D%B8%E7%89%9B%E5%B9%BC%E5%85%92%E5%9C%92%E6%89%98%E5%AC%B0%E4%B8%AD%E5%BF%83-61551929941103/">到 Facebook 看園所日常</a>
       </div>
     </div>
   </section>
@@ -255,14 +247,10 @@ footer li a:hover { background-size:100% 1px; }
       <div class="grid">
         <div class="s6 panel">
           <dl>
-            <div><dt>電話<span class="mock">MOCK</span></dt><dd>04-0000-0000</dd></div>
+            <div><dt>電話<span class="mock">MOCK</span></dt><dd><a href="tel:0400000000">04-0000-0000</a></dd></div>
             <div><dt>參觀時間<span class="mock">MOCK</span></dt><dd>週一至週五 上午 10:00–11:30，請先用 LINE 或電話預約。</dd></div>
             <div><dt>收托年齡與班別<span class="mock">MOCK</span></dt><dd>2 歲至入小學前，分幼幼班、小班、中班、大班。</dd></div>
           </dl>
-          <div class="btns">
-            <a class="btn" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a>
-            <a class="btn btn--ghost" href="tel:0400000000">撥打電話</a>
-          </div>
         </div>
         <div class="s6 map">
           <iframe title="小蝸牛幼兒園地圖" loading="lazy" src="https://maps.google.com/maps?q=%E8%87%BA%E4%B8%AD%E5%B8%82%E8%A5%BF%E5%B1%AF%E5%8D%80%E7%A6%8F%E6%9E%97%E9%87%8C%E7%A6%8F%E7%A7%91%E8%B7%AF658%E5%B7%B79%E5%BC%847%E8%99%9F&amp;hl=zh-TW&amp;output=embed"></iframe>
@@ -290,7 +278,6 @@ footer li a:hover { background-size:100% 1px; }
       <div class="s7">
         <h2>歡迎來參觀，看看孩子的一天</h2>
         <p>先加入 LINE，我們會回覆適合的參觀時間。<span class="mock">MOCK</span></p>
-        <a class="btn" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a>
       </div>
       <a class="s5 ph ph--sq" href="#visit" aria-label="來園參觀"><img src="assets/img/photo-f116035963-960.jpg" srcset="assets/img/photo-f116035963-500.jpg 500w, assets/img/photo-f116035963-960.jpg 960w" sizes="(max-width:1023px) 100vw, 486px" width="960" height="640" loading="lazy" decoding="async" alt="白色平房的園舍與戶外遊戲設施" data-source="stand-in" data-subject="building"></a>
     </div>
@@ -319,14 +306,10 @@ footer li a:hover { background-size:100% 1px; }
 <nav class="actionbar" aria-label="快速聯絡"><a class="btn" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a></nav>
 
 <script>
-  // 預覽用：?palette=2|3 換配色；手機版在首屏按鈕捲出畫面後顯示底部按鈕。Wix 不需要這段。
+  // 預覽用：?palette=2|3 換配色。Wix 不需要這段。
   (function () {
     var p = new URLSearchParams(location.search).get('palette');
     if (p) document.documentElement.setAttribute('data-palette', p);
-    var hero = document.getElementById('hero-line'), bar = document.querySelector('.actionbar');
-    if (hero && bar && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (e) { bar.classList.toggle('on', !e[0].isIntersecting); }).observe(hero);
-    }
   })();
 </script>
 </body>

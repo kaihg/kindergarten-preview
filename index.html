@@ -124,7 +124,7 @@ a.ph:hover img { transform:scale(1.03); }
 .close p { margin-bottom:28px; color:var(--muted); font-size:clamp(18px,1.8vw,22px); }
 
 /* footer */
-footer { background:var(--ink); color:var(--bg); padding-block:clamp(56px,7vw,88px) 112px; }
+footer { background:var(--ink); color:var(--bg); padding-block:clamp(56px,7vw,88px) 32px; }
 footer a { text-decoration:none; }
 footer .cols { padding-bottom:48px; }
 footer .label { color:color-mix(in srgb,var(--bg) 65%,transparent); display:block; margin-bottom:10px; }
@@ -137,8 +137,8 @@ footer li a:hover { background-size:100% 1px; }
 .legal a { text-decoration:underline; }
 
 /* phone action bar */
-.actionbar { position:fixed; right:24px; bottom:24px; z-index:30; }
-.actionbar .btn { min-height:56px; padding:0 32px; font-size:19px; }
+.actionbar { display:none; }
+header .btn { min-height:44px; padding:0 20px; font-size:16px; }
 
 /* tablet */
 @media (max-width:1023px) {
@@ -158,7 +158,8 @@ footer li a:hover { background-size:100% 1px; }
   .hero-photo { height:78vw; }
   .head { flex-direction:column; align-items:flex-start; gap:8px; }
   footer .s3 { grid-column:1/-1; }
-  .actionbar { left:0; right:0; bottom:0; padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom)); background:var(--bg); }
+  header .btn { display:none; }
+  .actionbar { display:block; position:fixed; left:0; right:0; bottom:0; z-index:30; padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom)); background:var(--bg); }
   .actionbar .btn { width:100%; }
 }
 @media (prefers-reduced-motion:reduce) { .enter { animation:none; } .btn,.ph img,.more,.more::after { transition:none; } }
@@ -178,6 +179,7 @@ footer li a:hover { background-size:100% 1px; }
       <a href="#visit">來園參觀</a>
       <a href="#faq">常見問題</a>
     </nav>
+    <a class="btn" href="https://line.me/R/ti/p/@mock">加入 LINE 詢問</a>
   </div>
 </header>
 

@@ -1,0 +1,29 @@
+/* Both reference studies share the same controls, not the same composition. */
+header.nav {background:var(--pine);color:var(--gold)}
+.brand {line-height:1.2}
+.brand svg {stroke:currentColor;width:36px;height:36px}
+.brand small {display:block;margin-top:5px;font:500 10px/1.2 system-ui,sans-serif;letter-spacing:.18em}
+header .btn {background:var(--gold);border-color:var(--gold);color:var(--pine)}
+.btn {cursor:pointer}
+.menu-toggle {border-color:currentColor;color:var(--gold)}
+.menu-toggle:hover {background:var(--gold);color:var(--pine)}
+:focus-visible {outline:3px solid #c07818;outline-offset:3px}
+.eyebrow {font:600 .84rem/1.5 system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase}
+.cover {position:relative;isolation:isolate;display:grid;align-items:center;padding:0;color:white;min-height:clamp(410px,63svh,720px)}
+.cover>img,.cover::after {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cover::after {content:"";z-index:-1}
+.cover h1 {line-height:1.2;text-wrap:balance}
+.preview-strip {padding:10px var(--gut);text-align:center;background:var(--alt);color:var(--ink);font-size:16px}
+.chapter {display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,84px);align-items:center}
+.chapter img {width:100%;height:100%;object-fit:cover}
+.chapter figure {margin:0;aspect-ratio:4/3;overflow:hidden}
+.chapter h2 {margin:8px 0 24px}
+.chapter p+p {margin-top:16px}
+#contact-preview {max-width:min(90vw,32rem);padding:32px;border:1px solid var(--ink);background:var(--bg);color:var(--ink)}
+#contact-preview::backdrop {background:#0f211dc9}
+#contact-preview h2 {font-size:26px;margin-bottom:12px}
+#contact-preview button {margin-top:22px}
+.actionbar {padding:0 0 env(safe-area-inset-bottom);background:var(--accent)}
+.actionbar .btn {height:54px;border-radius:0}
+@media (max-width:959px){.links {background:var(--pine);color:white;max-height:calc(100dvh - var(--nav) - 60px);overflow:auto}.links a {border-color:#ffffff47}.chapter {gap:24px}}
+@media (max-width:700px){.chapter {grid-template-columns:1fr}.chapter .chapter-copy {order:-1}.cover {min-height:clamp(385px,60svh,550px)}.brand svg {width:30px;height:30px}}
